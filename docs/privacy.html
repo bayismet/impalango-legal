@@ -1,90 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImpaLango - Privacy Policy</title>
+    <title>ImpaLango — Privacy Policy</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; line-height: 1.7; background: #faf9f6; }
         .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
-        .back { display: inline-block; color: #FF9838; text-decoration: none; font-size: 14px; margin-bottom: 24px; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .back { color: #FF9838; text-decoration: none; font-size: 14px; }
         .back:hover { text-decoration: underline; }
+        .lang-switcher select { background: #fff; color: #4A3F35; border: 1px solid #e0ddd8; border-radius: 6px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
         h1 { font-size: 28px; color: #4A3F35; margin-bottom: 8px; }
-        .date { color: #888; font-size: 14px; margin-bottom: 40px; }
+        .date { color: #888; font-size: 14px; margin-bottom: 16px; }
+        .legal-disclaimer { background: #fff3e0; border-left: 3px solid #FF9838; padding: 12px 16px; margin-bottom: 24px; font-size: 13px; color: #666; display: none; }
+        .intro { margin-bottom: 24px; }
         h2 { font-size: 20px; color: #4A3F35; margin-top: 32px; margin-bottom: 12px; }
         p, li { font-size: 15px; margin-bottom: 12px; }
         ul { padding-left: 24px; margin-bottom: 12px; }
         a { color: #FF9838; }
         .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e0ddd8; color: #888; font-size: 13px; }
+        [dir="rtl"] ul { padding-left: 0; padding-right: 24px; }
+        [dir="rtl"] .legal-disclaimer { border-left: none; border-right: 3px solid #FF9838; }
+        [dir="rtl"] .top-bar { flex-direction: row-reverse; }
     </style>
 </head>
-<body>
+<body data-i18n-page="privacy">
 <div class="container">
-    <a href="/" class="back">&larr; Back to ImpaLango</a>
-    <h1>Privacy Policy</h1>
-    <p class="date">Last updated: May 19, 2026</p>
+    <div class="top-bar">
+        <a href="/" class="back" data-i18n="backToHome">&larr; Back to ImpaLango</a>
+        <div class="lang-switcher">
+            <select id="lang-select">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="pt">Português</option>
+                <option value="tr">Türkçe</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="zh">中文</option>
+                <option value="ar">العربية</option>
+                <option value="ru">Русский</option>
+                <option value="nl">Nederlands</option>
+                <option value="hi">हिन्दी</option>
+            </select>
+        </div>
+    </div>
 
-    <p>ImpaLango ("we", "our", "the app") is an AI-powered augmented reality language learning app for iOS. We respect your privacy and are committed to protecting your personal data.</p>
+    <h1 data-i18n="pageTitle">Privacy Policy</h1>
+    <p class="date" data-i18n="lastUpdated">Last updated: May 19, 2026</p>
+    <div class="legal-disclaimer" id="legal-disclaimer"></div>
 
-    <h2>1. Data We Collect</h2>
-    <p><strong>Data stored on your device only:</strong></p>
-    <ul>
-        <li>Vocabulary words you learn (translations, pronunciation scores, mastery levels)</li>
-        <li>Learning progress (streaks, session history, daily goals)</li>
-        <li>Achievements and game results</li>
-        <li>App preferences (languages, notification settings)</li>
-    </ul>
-    <p>This data is stored locally on your device and optionally backed up to your personal iCloud account. We do not have access to your iCloud data.</p>
+    <p class="intro" data-i18n="intro">ImpaLango ("we", "our", "the app") is an AI-powered augmented reality language learning app for iOS. We respect your privacy and are committed to protecting your personal data.</p>
 
-    <p><strong>Camera and microphone:</strong></p>
-    <ul>
-        <li>Camera data is processed on-device for object detection and AR display. Images are never transmitted to our servers.</li>
-        <li>Microphone audio is used for pronunciation practice via Apple's Speech framework and Google Cloud Speech-to-Text. Audio is processed in real-time and is not stored.</li>
-    </ul>
+    <h2 data-i18n="section1Title">1. Data We Collect</h2>
+    <div data-i18n-html="section1Content">
+        <p><strong>Data stored on your device only:</strong></p>
+        <ul>
+            <li>Vocabulary words you learn (translations, pronunciation scores, mastery levels)</li>
+            <li>Learning progress (streaks, session history, daily goals)</li>
+            <li>Achievements and game results</li>
+            <li>App preferences (languages, notification settings)</li>
+        </ul>
+        <p>This data is stored locally on your device and optionally backed up to your personal iCloud account. We do not have access to your iCloud data.</p>
+        <p><strong>Camera and microphone:</strong></p>
+        <ul>
+            <li>Camera data is processed on-device for object detection and AR display. Images are never transmitted to our servers.</li>
+            <li>Microphone audio is used for pronunciation practice via Apple's Speech framework and Google Cloud Speech-to-Text. Audio is processed in real-time and is not stored.</li>
+        </ul>
+        <p><strong>Analytics (Mixpanel):</strong></p>
+        <ul>
+            <li>We collect anonymous usage events (e.g., words learned, sessions started, features used) to improve the app experience.</li>
+            <li>We do not collect names, email addresses, or other personally identifiable information through analytics.</li>
+            <li>Analytics data is sent to Mixpanel's EU servers.</li>
+        </ul>
+    </div>
 
-    <p><strong>Analytics (Mixpanel):</strong></p>
-    <ul>
-        <li>We collect anonymous usage events (e.g., words learned, sessions started, features used) to improve the app experience.</li>
-        <li>We do not collect names, email addresses, or other personally identifiable information through analytics.</li>
-        <li>Analytics data is sent to Mixpanel's EU servers.</li>
-    </ul>
+    <h2 data-i18n="section2Title">2. Third-Party Services</h2>
+    <div data-i18n-html="section2Content">
+        <p>The app uses the following third-party services:</p>
+        <ul>
+            <li><strong>Google Cloud Text-to-Speech</strong> — generates native pronunciation audio.</li>
+            <li><strong>Google Cloud Speech-to-Text</strong> — processes your spoken pronunciation attempts.</li>
+            <li><strong>Google Gemini AI</strong> — powers AI conversation features.</li>
+            <li><strong>Mixpanel</strong> — anonymous usage analytics.</li>
+            <li><strong>Apple iCloud / CloudKit</strong> — optional backup of your learning data.</li>
+        </ul>
+        <p>Each service is governed by its own privacy policy.</p>
+    </div>
 
-    <h2>2. Third-Party Services</h2>
-    <p>The app uses the following third-party services:</p>
-    <ul>
-        <li><strong>Google Cloud Text-to-Speech</strong> — generates native pronunciation audio. Text you request is sent to Google's API.</li>
-        <li><strong>Google Cloud Speech-to-Text</strong> — processes your spoken pronunciation attempts.</li>
-        <li><strong>Google Gemini AI</strong> — powers AI conversation features. Conversation context (detected objects, your messages) is sent to Google's API.</li>
-        <li><strong>Mixpanel</strong> — anonymous usage analytics.</li>
-        <li><strong>Apple iCloud / CloudKit</strong> — optional backup of your learning data to your personal iCloud account.</li>
-    </ul>
-    <p>Each service is governed by its own privacy policy. We encourage you to review them.</p>
+    <h2 data-i18n="section3Title">3. Data Sharing</h2>
+    <div data-i18n-html="section3Content">
+        <p>We do not sell, rent, or share your personal data with third parties for marketing purposes. Data is only transmitted to the third-party services listed above for the sole purpose of providing app functionality.</p>
+    </div>
 
-    <h2>3. Data Sharing</h2>
-    <p>We do not sell, rent, or share your personal data with third parties for marketing purposes. Data is only transmitted to the third-party services listed above for the sole purpose of providing app functionality.</p>
+    <h2 data-i18n="section4Title">4. Data Retention</h2>
+    <div data-i18n-html="section4Content">
+        <p>Your learning data remains on your device and in your iCloud account for as long as you use the app. Deleting the app removes all local data. You can manage iCloud data through your device's iCloud settings.</p>
+    </div>
 
-    <h2>4. Data Retention</h2>
-    <p>Your learning data remains on your device and in your iCloud account for as long as you use the app. Deleting the app removes all local data. You can manage iCloud data through your device's iCloud settings.</p>
+    <h2 data-i18n="section5Title">5. Children's Privacy</h2>
+    <div data-i18n-html="section5Content">
+        <p>ImpaLango is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+    </div>
 
-    <h2>5. Children's Privacy</h2>
-    <p>ImpaLango is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+    <h2 data-i18n="section6Title">6. Your Rights</h2>
+    <div data-i18n-html="section6Content">
+        <p>Since your data is stored locally on your device and in your personal iCloud account, you have full control over it. You can delete all app data by uninstalling the app and removing the iCloud backup from your device settings.</p>
+    </div>
 
-    <h2>6. Your Rights</h2>
-    <p>Since your data is stored locally on your device and in your personal iCloud account, you have full control over it. You can delete all app data by uninstalling the app and removing the iCloud backup from your device settings.</p>
+    <h2 data-i18n="section7Title">7. Subscriptions</h2>
+    <div data-i18n-html="section7Content">
+        <p>ImpaLango offers optional premium subscriptions managed through Apple's App Store. Payment processing is handled entirely by Apple. We do not have access to your payment information.</p>
+    </div>
 
-    <h2>7. Subscriptions</h2>
-    <p>ImpaLango offers optional premium subscriptions managed through Apple's App Store. Payment processing is handled entirely by Apple. We do not have access to your payment information.</p>
+    <h2 data-i18n="section8Title">8. Changes to This Policy</h2>
+    <div data-i18n-html="section8Content">
+        <p>We may update this privacy policy from time to time. The updated version will be posted on this page with a revised date.</p>
+    </div>
 
-    <h2>8. Changes to This Policy</h2>
-    <p>We may update this privacy policy from time to time. The updated version will be posted on this page with a revised date.</p>
-
-    <h2>9. Contact</h2>
-    <p>If you have questions about this privacy policy, contact us at <a href="mailto:ismetbayramoglu@gmail.com">ismetbayramoglu@gmail.com</a>.</p>
+    <h2 data-i18n="section9Title">9. Contact</h2>
+    <div data-i18n-html="section9Content">
+        <p>If you have questions about this privacy policy, contact us at <a href="mailto:ismetbayramoglu@gmail.com">ismetbayramoglu@gmail.com</a>.</p>
+    </div>
 
     <div class="footer">
-        <p>&copy; 2026 ImpaLango. All rights reserved.</p>
+        <p data-i18n="copyright">&copy; 2026 ImpaLango. All rights reserved.</p>
     </div>
 </div>
+
+<script src="/translations.js"></script>
+<script src="/i18n.js"></script>
 </body>
 </html>
