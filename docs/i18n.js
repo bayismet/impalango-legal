@@ -5,8 +5,6 @@
   function getPreferredLang() {
     var stored = localStorage.getItem(STORAGE_KEY);
     if (stored && TRANSLATIONS.common[stored]) return stored;
-    var browserLang = navigator.language.slice(0, 2);
-    if (TRANSLATIONS.common[browserLang]) return browserLang;
     return DEFAULT_LANG;
   }
 
