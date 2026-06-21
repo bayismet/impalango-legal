@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; line-height: 1.7; background: #faf9f6; }
-        .hero { text-align: center; padding: 60px 24px 48px; }
+        .hero { text-align: center; padding: 60px 24px 48px; position: relative; }
         .hero img { width: 120px; height: 120px; border-radius: 24px; margin-bottom: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
         .hero h1 { font-size: 42px; color: #4A3F35; margin-bottom: 8px; letter-spacing: -0.5px; }
         .hero .tagline { font-size: 20px; color: #888; margin-bottom: 32px; }
@@ -22,47 +22,71 @@
         .cta .note { font-size: 13px; color: #888; margin-top: 12px; }
         .footer { text-align: center; padding: 24px; border-top: 1px solid #e0ddd8; color: #888; font-size: 13px; }
         .footer a { color: #FF9838; text-decoration: none; margin: 0 12px; }
+        .lang-switcher { position: absolute; top: 20px; right: 24px; }
+        .lang-switcher select { background: #fff; color: #4A3F35; border: 1px solid #e0ddd8; border-radius: 6px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
+        [dir="rtl"] .lang-switcher { right: auto; left: 24px; }
     </style>
 </head>
-<body>
+<body data-i18n-page="index">
     <div class="hero">
+        <div class="lang-switcher">
+            <select id="lang-select">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="pt">Português</option>
+                <option value="tr">Türkçe</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="zh">中文</option>
+                <option value="ar">العربية</option>
+                <option value="ru">Русский</option>
+                <option value="nl">Nederlands</option>
+                <option value="hi">हिन्दी</option>
+            </select>
+        </div>
         <img src="/logo.png" alt="ImpaLango">
         <h1>ImpaLango</h1>
-        <p class="tagline">Learn Languages Through Your World</p>
-        <p class="desc">Point your phone at real-world objects and see translated AR labels, hear native pronunciation, practice speaking, and have AI conversations about your surroundings. 14 languages, any pair.</p>
+        <p class="tagline" data-i18n="tagline">Learn Languages Through Your World</p>
+        <p class="desc" data-i18n="description">Point your phone at real-world objects and see translated AR labels, hear native pronunciation, practice speaking, and have AI conversations about your surroundings. 14 languages, any pair.</p>
     </div>
 
     <div class="features">
         <div class="feature">
-            <h3>See</h3>
-            <p>Real-time AR labels appear on 417 object classes. On-device ML, no internet needed for the core loop.</p>
+            <h3 data-i18n="feature1Title">See</h3>
+            <p data-i18n="feature1Desc">Real-time AR labels appear on 417 object classes. On-device ML, no internet needed for the core loop.</p>
         </div>
         <div class="feature">
-            <h3>Read</h3>
-            <p>Scan signs, menus, and text with OCR. Word-by-word translations saved to your vocabulary.</p>
+            <h3 data-i18n="feature2Title">Read</h3>
+            <p data-i18n="feature2Desc">Scan signs, menus, and text with OCR. Word-by-word translations saved to your vocabulary.</p>
         </div>
         <div class="feature">
-            <h3>Hear &amp; Speak</h3>
-            <p>Native pronunciation from neural voices. Say it back and get scored with diacritic-aware comparison.</p>
+            <h3 data-i18n="feature3Title">Hear &amp; Speak</h3>
+            <p data-i18n="feature3Desc">Native pronunciation from neural voices. Say it back and get scored with diacritic-aware comparison.</p>
         </div>
         <div class="feature">
-            <h3>Talk</h3>
-            <p>AI tutor adapts to what your camera sees. Context-aware conversations grounded in your environment.</p>
+            <h3 data-i18n="feature4Title">Talk</h3>
+            <p data-i18n="feature4Desc">AI tutor adapts to what your camera sees. Context-aware conversations grounded in your environment.</p>
         </div>
     </div>
 
     <div class="cta">
-        <a href="https://testflight.apple.com/join/Sj5SDxq3">Join the Beta on TestFlight</a>
-        <p class="note">Available on iPhone with iOS 16+</p>
+        <a href="https://testflight.apple.com/join/VBwXqC1s" data-i18n="ctaButton">Join the Beta on TestFlight</a>
+        <p class="note" data-i18n="ctaNote">Available on iPhone with iOS 16+</p>
     </div>
 
     <div class="footer">
         <p>
-            <a href="/privacy.html">Privacy Policy</a>
-            <a href="/terms.html">Terms of Service</a>
-            <a href="mailto:ismetbayramoglu@gmail.com">Contact</a>
+            <a href="/privacy.html" data-i18n="privacyLink">Privacy Policy</a>
+            <a href="/terms.html" data-i18n="termsLink">Terms of Service</a>
+            <a href="mailto:ismetbayramoglu@gmail.com" data-i18n="contactLink">Contact</a>
         </p>
-        <p style="margin-top: 12px;">&copy; 2026 ImpaLango. All rights reserved.</p>
+        <p style="margin-top: 12px;" data-i18n="copyright">&copy; 2026 ImpaLango. All rights reserved.</p>
     </div>
+
+    <script src="/translations.js"></script>
+    <script src="/i18n.js"></script>
 </body>
 </html>
